@@ -1,0 +1,24 @@
+<table style="width:300px">
+  <tr>
+    <th>Ordernro</th>
+    <th>Customer</th>
+    <th>Order</th>
+    <th>Uncompleted</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let order of coffeeOrders">
+    <td [class.fade]="order.payload.doc.data().completed">{{ order.payload.doc.data().orderNumber }}</td>
+    <td [class.fade]="order.payload.doc.data().completed">{{ order.payload.doc.data().customerName }}</td>
+    <td [class.fade]="order.payload.doc.data().completed"><span
+        *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
+        {{ coffee }}
+      </span>
+    </td>
+    <td [hidden]="order.payload.doc.data().completed" (click)="markCompleted(order)">
+      <i class="material-icons">check</i>
+    </td>
+    <td [hidden]="order.payload.doc.data().completed" (click)="deleteOrder(order)">
+      <i class="material-icons">delete_forever</i>
+    </td>
+  </tr>
+</table>

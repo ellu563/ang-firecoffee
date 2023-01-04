@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  // tässä laitetaan alla yhteys firebase nosql kantaan
+  firebaseConfig: {
+    apiKey: 'AIzaSyAI01vdmh4vl1vbXec1ijtXUP3QYTiO_wM',
+    authDomain: 'ang-firecoffee-elina.firebaseapp.com',
+    projectId: 'ang-firecoffee-elina',
+    storageBucket: 'ang-firecoffee-elina.appspot.com',
+    messagingSenderId: '891493515859',
+    appId: '1:891493515859:web:2fd7cb82eb62dd18a63ca6',
+    measurementId: 'G-NGTHQ19F49',
+  },
+  // ei tuotantotilassa vaan kehitys tilassa
+  production: false,
 };
 
 /*
